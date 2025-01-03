@@ -57,7 +57,7 @@
       label = "TAP_DANCE_UMLAUT_A";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&kp A>, <&kp X>;
+      bindings = <&hm LGUI A>, <&kp X>;
     };
 
     td_uml_o: td_umlaut_o {
@@ -109,7 +109,7 @@
       bindings = <
 
 &none   /**/  &kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o    &kp P          /**/  &none
-&none   /**/  &hm LGUI td_uml_a &hm LALT S      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &td0           /**/  &none
+&none   /**/  &td_uml_a         &hm LALT S      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &td0           /**/  &none
 &none   /**/  &kp Z             &kp X           &kp C           &kp V           &kp B           /**/  &kp N         &kp M           &kp COMMA       &kp DOT         &kp FSLH       /**/  &none
                                                 &td1            &lt NUM BSPC    &mt LGUI SPACE  /**/  &mt RGUI RET  &lt SYM DEL     &mt RALT GRAVE
 
