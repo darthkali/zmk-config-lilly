@@ -78,7 +78,15 @@
       label = "TAP_DANCE_UMLAUT_U";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&kp U>, <&kp DQT>;
+      bindings = <&kp U>, <&de_ue>;
+    };
+
+    td_uml_sz: td_umlaut_sz {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_UMLAUT_U";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&hm LALT S>, <&de_eszett>;
     };
   };
 
@@ -114,7 +122,7 @@
       bindings = <
 
 &none   /**/  &kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o    &kp P          /**/  &none
-&none   /**/  &td_uml_a         &hm LALT S      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &td0           /**/  &none
+&none   /**/  &td_uml_a         &td_uml_sz      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &td0           /**/  &none
 &none   /**/  &kp Z             &kp X           &kp C           &kp V           &kp B           /**/  &kp N         &kp M           &kp COMMA       &kp DOT         &kp FSLH       /**/  &none
                                                 &td1            &lt NUM BSPC    &mt LGUI SPACE  /**/  &mt RGUI RET  &lt SYM DEL     &mt RALT GRAVE
 
