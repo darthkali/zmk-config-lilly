@@ -3,7 +3,8 @@ I started with an initial layout from the following Repo:
 
 https://github.com/jporter-dev/zmk-config/tree/caa003af2909f47dbd53cbb89e51d7bd0c010513?tab=readme-ov-file
 
-![keymap.png](keymap.png)
+![corne.svg](assets/corne.png)
+https://www.keyboard-layout-editor.com/#/gists/250c971a1ab733f496a6edca25804e91
 
 # Using German Umlauts in ZMK on macOS
 
