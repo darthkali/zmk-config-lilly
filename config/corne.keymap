@@ -67,7 +67,7 @@
 
     td_uml_o: td_umlaut_o {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_UMLAUT_O";_
+      label = "TAP_DANCE_UMLAUT_O";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
       bindings = <&kp O>, <&de_oe>;
