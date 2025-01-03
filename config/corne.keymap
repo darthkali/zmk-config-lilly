@@ -83,7 +83,7 @@
 
     td_uml_sz: td_umlaut_sz {
       compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_UMLAUT_U";
+      label = "TAP_DANCE_UMLAUT_SZ";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
       bindings = <&hm LALT S>, <&de_eszett>;
