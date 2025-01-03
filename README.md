@@ -5,64 +5,58 @@ https://github.com/jporter-dev/zmk-config/tree/caa003af2909f47dbd53cbb89e51d7bd0
 
 ![keymap.png](keymap.png)
 
-# German Umlaute
-Um Umlaute zu schreiben, habe ich die folgende Bibliothek verwendetz: https://github.com/urob/zmk-helpers 
+# Using German Umlauts in ZMK on macOS
 
-Damit diese funktioniert musste ich auf mac os folgendes einstellen:
+To type German umlauts, I used the following library: [zmk-helpers by urob](https://github.com/urob/zmk-helpers).
 
-1. **In macOS die „Unicode Hex Input“-Eingabequelle aktivieren**
-2. **`HOST_OS` für macOS richtig setzt**
-3. **Die passenden Unicode-Helper in deiner ZMK-Config einbindest**
+On macOS, the following steps were necessary to make this work:
 
----
-
-## 1. Unicode-Eingabe unter macOS aktivieren
-- Öffne die **Systemeinstellungen** (bzw. „System Settings“ auf englischen Systemen).
-- Navigiere zu **Tastatur** -> **Eingabequellen**.
-- Klicke auf das **Plus-Symbol** \(+\).
-- Scrolle runter bis zu **Weitere** / **Others** und wähle dort „**Unicode Hex Input**“.
-- Füge diese Eingabequelle hinzu.
-- Achte darauf, dass du in der macOS-Menüleiste (Input Source-Auswahl) nun zwischen deinem normalen Layout und „Unicode Hex Input“ wechseln kannst.
-
-> **Tipp**: Evtl. möchtest du einen Shortcut in macOS anlegen, um schnell zwischen deinen Eingabequellen zu wechseln.
+1. **Enable the “Unicode Hex Input” source in macOS**
+2. **Set `HOST_OS` to the correct value for macOS**
+3. **Include the appropriate Unicode helpers in your ZMK config**
 
 ---
 
-## 2. `HOST_OS` in ZMK auf `2` setzen
-In deiner Keymap-Datei muss stehen:
+## 1. Enable Unicode Hex Input in macOS
+- Open **System Settings** (formerly **System Preferences**).
+- Go to **Keyboard** -> **Input Sources**.
+- Click the **plus (+) icon**.
+- Scroll down to **Others** and select **Unicode Hex Input**.
+- Add that input source.
+- Make sure you can now switch between your normal layout and **Unicode Hex Input** in the macOS menu bar.
+
+> **Tip**: You may want to create a macOS shortcut to quickly switch between input sources.
+
+---
+
+## 2. Set `HOST_OS` in ZMK to `2`
+In your keymap file, include the following:
 
 ```c
 #define HOST_OS 2
+``` 
+This tells the ZMK helpers that you are using macOS, so they can use the appropriate input logic.
+ 
+# 3. Include the appropriate Unicode helpers
+Next, include the helper and the required language file, for example german.dtsi. You might place this at the top of your .keymap file (or wherever you have your includes):
+
 ```
-
-Dies signalisiert den ZMK-Helpern, dass du **macOS** verwendest und entsprechend die Eingabelogik anpasst.
-
----
-
-## 3. Die passenden Unicode-Helper einbinden
-Anschließend bindest du den Helper und die benötigte Sprachdatei ein, z.B. „german.dtsi“.  
-Das Ganze sieht zum Beispiel so aus (ganz oben in der `.keymap`-Datei oder wo du deine Includes hast):
-
-```c
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 ```
 
-Damit bekommst du Zugriff auf die vordefinierten Keycodes, die „german.dtsi“ mitbringt (etwa `de_ae` für „ä“, `de_oe` für „ö“ usw.).
+This grants you access to the predefined keycodes that german.dtsi provides (e.g., de_ae for “ä”, de_oe for “ö”, and so on).
 
----
 
-## Umlaute in deinem Keymap-Layout definieren
-Jetzt brauchst du in deinem Keymap-Layout selbst nur noch den jeweiligen Unicode-Keycode auf einen Tastendruck zu legen. In meinem Fall habe Ich die Umlaute mit einem doppelten tastendruck auf diejeweils passenden Buchstaben gelegt. Also ä auf a + a, ü auf u + u usw.
+# Defining Umlauts in your keymap layout
+Finally, you just need to assign the respective Unicode keycode to a key press in your layout. In my case, I mapped each umlaut to a double-tap on its base letter (e.g., “ä” on double-tap of “a”, “ü” on double-tap of “u”, etc.).
 
-```dts
-    td_uml_a: td_umlaut_a {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_UMLAUT_A";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-          bindings = <&hm LGUI A>, <&kl>;
-    };
 ```
-
-  
+td_uml_a: td_umlaut_a {
+  compatible = "zmk,behavior-tap-dance";
+  label = "TAP_DANCE_UMLAUT_A";
+  #binding-cells = <0>;
+  tapping-term-ms = <200>;
+  bindings = <&hm LGUI A>, <&kl>;
+};
+```
