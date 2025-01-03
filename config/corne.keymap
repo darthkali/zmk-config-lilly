@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors.dtsi>
 
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/34.h"
+#include "zmk-helpers/unicode-chars/german.dtsi"
+
 // LAYERS
 #define DEFAULT 0
 #define NUM     1
