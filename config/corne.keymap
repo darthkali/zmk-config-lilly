@@ -41,14 +41,6 @@
       bindings = <&kp>, <&kp>;
     };
 
-    td0: tap_dance_0 {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_0";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&hm RGUI SEMI>, <&kp SQT>;
-    };
-
     td1: tap_dance_1 {
       compatible = "zmk,behavior-tap-dance";
       label = "TAP_DANCE_1";
@@ -121,8 +113,8 @@
     default_layer {
       bindings = <
 
-&none   /**/  &kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o    &kp P          /**/  &none
-&none   /**/  &td_uml_a         &td_uml_sz      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &td0           /**/  &none
+&none   /**/  &kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o       &kp P          /**/  &none
+&none   /**/  &td_uml_a         &td_uml_sz      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &hm RGUI SEMI  /**/  &none
 &none   /**/  &kp Z             &kp X           &kp C           &kp V           &kp B           /**/  &kp N         &kp M           &kp COMMA       &kp DOT         &kp FSLH       /**/  &none
                                                 &td1            &lt NUM BSPC    &mt LGUI SPACE  /**/  &mt RGUI RET  &lt SYM DEL     &mt RALT GRAVE
 
@@ -132,9 +124,9 @@
     num_layer {
       bindings = <
 
-&none   /**/  &none         &kp LA(LEFT)  &kp UP        &kp LA(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  /**/  &none
-&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH        /**/  &none
-&none   /**/  &kp SUPER2    &none         &none         &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT          /**/  &none
+&none   /**/  &none         &kp LA(LEFT)  &kp UP        &kp LA(RIGHT) &kp PG_UP  /**/  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY   /**/  &none
+&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN  /**/  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH         /**/  &none
+&none   /**/  &kp SUPER2    &none         &none         &kp HOME      &kp END    /**/  &kp N0     &kp N1  &kp N2  &kp N3  &kp SQT           /**/  &none
               &trans  &trans  &trans  /**/  &trans  &mo FUNC  &trans
 
       >;
