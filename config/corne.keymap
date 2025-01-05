@@ -109,9 +109,9 @@
     default_layer {
       bindings = <
 
-&none   /**/  &kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o       &kp P          /**/  &none
-&none   /**/  &td_uml_a         &td_uml_sz      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &hm RGUI SEMI  /**/  &none
-&none   /**/  &kp Z             &kp X           &kp C           &kp V           &kp B           /**/  &kp N         &kp M           &kp COMMA       &kp DOT         &kp FSLH       /**/  &none
+&kp Q             &kp W           &kp E           &kp R           &kp T           /**/  &kp Y         &td_uml_u       &kp I           &td_uml_o       &kp P
+&td_uml_a         &td_uml_sz      &hm LCTRL D     &hm LSHIFT F    &kp G           /**/  &kp H         &hm RSHIFT J    &hm RCTRL K     &hm RALT L      &hm RGUI SEMI
+&kp Z             &kp X           &kp C           &kp V           &kp B           /**/  &kp N         &kp M           &kp COMMA       &kp DOT         &kp FSLH
                                                 &mt LCTRL TAB   &lt SYM BSPC    &mt LGUI SPACE  /**/  &mt RGUI RET  &lt NUM DEL     &kp ESC
 
       >;
@@ -121,9 +121,9 @@
     sym_layer {
       bindings = <
 
-&none   /**/  &kp EXCL    &kp AT        &kp HASH    &kp DLLR    &kp PRCNT   /**/  &kp CARET &kp AMPS    &kp LPAR    &kp RPAR &mt RALT GRAVE  /**/  &none
-&none   /**/  &kp GRAVE   &kp TILDE     &none       &none       &none       /**/  &kp MINUS &kp EQUAL   &kp LBKT    &kp RBKT &kp BSLH  /**/  &none
-&none   /**/  &kp TILDE   &none         &none       &none       &none       /**/  &kp UNDER &kp PLUS    &kp LBRC    &kp RBRC &kp PIPE  /**/  &none
+&kp EXCL    &kp AT        &kp HASH    &kp DLLR    &kp PRCNT   /**/  &kp CARET &kp AMPS    &kp LPAR    &kp RPAR &mt RALT GRAVE
+&kp GRAVE   &kp TILDE     &none       &none       &none       /**/  &kp MINUS &kp EQUAL   &kp LBKT    &kp RBKT &kp BSLH
+&kp TILDE   &none         &none       &none       &none       /**/  &kp UNDER &kp PLUS    &kp LBRC    &kp RBRC &kp PIPE
                                         &trans      &mo FUNC    &trans      /**/  &trans    &trans      &trans
 
       >;
@@ -133,9 +133,9 @@
     num_layer {
       bindings = <
 
-&none   /**/  &none         &kp LA(LEFT)  &kp UP        &kp LA(RIGHT) &kp PG_UP     /**/  &kp PLUS   &kp N7     &kp N8  &kp N9  &kp KP_MULTIPLY     /**/  &none
-&none   /**/  &kp SUPER     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN     /**/  &kp MINUS  &kp N4     &kp N5  &kp N6  &kp SQT             /**/  &none
-&none   /**/  &kp SUPER2    &none         &none         &kp HOME      &kp END       /**/  &kp N0     &kp N1     &kp N2  &kp N3  &kp DQT             /**/  &none
+&none         &kp LA(LEFT)  &kp UP        &kp LA(RIGHT) &kp PG_UP     /**/  &kp PLUS   &kp N7     &kp N8  &kp N9  &kp KP_MULTIPLY
+&kp SUPER     &kp LEFT      &kp DOWN      &kp RIGHT     &kp PG_DN     /**/  &kp MINUS  &kp N4     &kp N5  &kp N6  &kp SQT
+&kp SUPER2    &none         &none         &kp HOME      &kp END       /**/  &kp N0     &kp N1     &kp N2  &kp N3  &kp DQT
                                           &trans        &trans        &trans        /**/  &trans     &mo FUNC   &trans
 
       >;
@@ -146,9 +146,9 @@
     func_layer {
       bindings = <
 
-&none   /**/  &kp F1    &kp F2      &kp F3      &kp F4      &kp F5              /**/  &kp F6        &kp F7          &kp F8       &kp F9   &kp F10  /**/  &none
-&none   /**/  &none     &none       &kp C_PREV  &kp C_NEXT  &kp C_PLAY_PAUSE    /**/  &kp C_MUTE    &kp C_VOL_DN    &kp C_VOL_UP &none    &kp F11  /**/  &none
-&none   /**/  &none     &none       &none       &none       &none               /**/  &none         &none           &none        &none    &kp F12  /**/  &none
+&kp F1    &kp F2      &kp F3      &kp F4      &kp F5              /**/  &kp F6        &kp F7          &kp F8       &kp F9   &kp F10
+&none     &none       &kp C_PREV  &kp C_NEXT  &kp C_PLAY_PAUSE    /**/  &kp C_MUTE    &kp C_VOL_DN    &kp C_VOL_UP &none    &kp F11
+&none     &none       &none       &none       &none                        &none           &none        &none    &kp F12
                                                 &sys_reset      &trans      &bootloader         /**/  &bootloader   &trans          &sys_reset
 
       >;
