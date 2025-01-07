@@ -1,3 +1,5 @@
+[![Build ZMK firmware](https://github.com/darthkali/zmk-config-corne/actions/workflows/build.yml/badge.svg)](https://github.com/darthkali/zmk-config-corne/actions/workflows/build.yml)
+
 # Layout
 
 
