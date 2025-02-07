@@ -9,7 +9,7 @@
     behaviors {
 
         esc_ss: esc_ss {
-                  compatible = "zmk, behavior-hold-tap";
+                  compatible = "zmk,behavior-hold-tap";
                   label = "ESC or Shift-Shift-Macro";
                   #binding-cells = <0>;
                   tapping-term-ms = <200>;
