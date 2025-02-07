@@ -13,7 +13,7 @@
                   label = "ESC or Shift-Shift-Macro";
                   #binding-cells = <1>;
                   tapping-term-ms = <200>;
-                  bindings = <&shift_shift &kp ESC>;
+                  bindings = <&shift_shift 0 &kp ESC>;
               };
 
 
