@@ -1,0 +1,12 @@
+// Make sure settings.dtsi is included before this file
+
+/ {
+    macros {
+        shift_shift: shift_shift {
+            label = "Shift Shift for IntelliJ";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LSHFT &macro_tap &kp LSHFT>;
+        };
+    };
+};

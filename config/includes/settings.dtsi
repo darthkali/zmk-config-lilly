@@ -1,0 +1,7 @@
+// Make sure this file is included before all other files
+
+/ {
+    chosen {
+        zmk,physical-layout = &foostan_corne_5col_layout;
+    };
+};
