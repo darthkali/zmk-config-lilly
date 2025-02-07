@@ -17,13 +17,16 @@
 
 
 // ZMK includes
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/34.h"
 #include "zmk-helpers/unicode-chars/german.dtsi"
-#include <behaviors.dtsi>
+
 
 #define HOST_OS 2 //Unicode-characters and language collection https://github.com/urob/zmk-helpers
 
