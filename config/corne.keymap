@@ -27,9 +27,10 @@
 #define HOST_OS 2 //Unicode-characters and language collection https://github.com/urob/zmk-helpers
 
 // Personal includes
-#include <includes/settings.dtsi>
-#include <includes/macros.dtsi>
-#include <includes/behaviors.dtsi>
+#include "includes/settings.dtsi"
+#include "includes/macros.dtsi"
+#include "includes/behaviors.dtsi"
+
 
 
 
