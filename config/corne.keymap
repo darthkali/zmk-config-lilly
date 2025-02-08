@@ -46,6 +46,38 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        td_uml_a: td_umlaut_a {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_DANCE_UMLAUT_A";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&hm LGUI A>, <&de_ae>;
+                };
+
+                td_uml_o: td_umlaut_o {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_DANCE_UMLAUT_O";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&kp O>, <&de_oe>;
+                };
+
+                td_uml_u: td_umlaut_u {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_DANCE_UMLAUT_U";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&kp U>, <&de_ue>;
+                };
+
+                td_uml_sz: td_umlaut_sz {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "TAP_DANCE_UMLAUT_SZ";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&hm LALT S>, <&de_eszett>;
+                };
     };
 
     macros {
