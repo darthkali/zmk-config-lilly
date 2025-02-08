@@ -46,14 +46,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-        esc_ss: esc_ss {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC or Shift-Shift-Macro";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&shift_shift>, <&kp ESC>;
-        };
     };
 
     macros {
@@ -87,7 +79,7 @@
                 // ╰───────────────────────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────────────────────────────────────╯
                 //                                  TAB             BACK SPACE      SPACE               ENTER           DELETE          ESC
                 //                                 ├---------------┼---------------┼---------------┤   ├---------------┼---------------┼---------------┤
-                                                    &mt LCTRL TAB   &lt NUM  BSPC   &mt LGUI SPACE      &mt RGUI RET    &lt SYM DEL     &esc_ss
+                                                    &mt LCTRL TAB   &lt NUM  BSPC   &mt LGUI SPACE      &mt RGUI RET    &lt SYM DEL     &mt shift_shift ESC
                 //                                 ╰───────────────┴───────────────┴───────────────╯   ╰───────────────┴───────────────┴───────────────╯
             >;
         };
