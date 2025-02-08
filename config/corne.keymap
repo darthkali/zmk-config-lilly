@@ -7,15 +7,6 @@
  * Base Layout from: https://github.com/jporter-dev/zmk-config
  */
 
-
-
-// Define layer numbers
-#define DEFAULT 0
-#define SYM     1
-#define NUM     2
-#define FUNC    3
-
-
 // ZMK includes
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -27,15 +18,65 @@
 #include "zmk-helpers/key-labels/34.h"
 #include "zmk-helpers/unicode-chars/german.dtsi"
 
-
-#define HOST_OS 2 //Unicode-characters and language collection https://github.com/urob/zmk-helpers
-
 // Personal includes
 #include "includes/settings.dtsi"
 #include "includes/macros.dtsi"
-#include "includes/behaviors-custom.dtsi"
+// #include "includes/behaviors-custom.dtsi"
 
 
+#define HOST_OS 2 //Unicode-characters and language collection https://github.com/urob/zmk-helpers
+
+// Define layer numbers
+#define DEFAULT 0
+#define SYM     1
+#define NUM     2
+#define FUNC    3
+
+/* Global defaults */
+
+#define QUICK_TAP_MS 175
+
+&sk {
+  release-after-ms = <900>;
+  quick-release;
+};
+
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+
+
+
+
+
+
+/* Homerow mods */
+#include "zmk-helpers/key-labels/42.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
+#define THUMBS LH1 LH0 RH0 RH1
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
+
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+// Hack: Make HRM combos tap-only (cf, ZMK issue #544).
+#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
 
@@ -45,6 +86,12 @@
 };
 
 / {
+
+    chosen {
+        zmk,physical-layout = &foostan_corne_5col_layout;
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -59,7 +106,7 @@
                 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
                 //  A               S               D               F               G                   H               J               K               L               ;
                 // ├---------------┼---------------┼---------------┼---------------┼---------------┤   ├---------------┼---------------┼---------------┼---------------┼---------------┤
-                    &hm_l LCTRL A   &hm_l LALT S    &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G       &kp H     &hm_shift_r RSHIFT J &hm_r RCTRL K    &hm_r RALT L    &hm_r RGUI SEMI
+                    &hml LCTRL A    &hml LALT S     &hml LCTRL D    &hml LSHIFT F   &kp G               &kp H           &hmr RSHIFT J   &hmr RCTRL K    &hmr RALT L     &hmr RGUI SEMI
                 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤   ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
                 //  Z               X               C               V               B                   N               M               ,               .               /
                 // ├---------------┼---------------┼---------------┼---------------┼---------------┤   ├---------------┼---------------┼---------------┼---------------┼---------------┤
