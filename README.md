@@ -4,11 +4,11 @@
 
 
 
-![corne.svg](assets/corne.png)
+![corne.svg](assets/my_keymap.png)
 
 <sub>_View on [Keyboard Layout Editor](https://www.keyboard-layout-editor.com/#/gists/250c971a1ab733f496a6edca25804e91)_<sub>
 
-I started with an initial layout from the following Repo: https://github.com/jporter-dev/zmk-config
+I started with an initial layout from the following Repo: https://caksoylar.github.io/keymap-drawer?keymap_yaml=H4sIAAAAAAAC_73Q2U7CQBQG4HueYqxLNFJGcMeYSGsRpCy2RUSs2EqhDbTFUjW4PIs3PoNX3vli9h-iQYKJJsYm87VzZjrnnJklfSMYWC1ieC0S2pZHwlvL6EaBduC7xA7D_iBNaccJ7Wszcem7VC7XKkq5INA7t8tf-l7b6fB3lsenqNnzTeoajkdH4egVeJYzsJvReqJrDV2jH-sZQ_86TMcIuXK7zSho-kbQSpOe0xuub9HAuklijxUMsOeoJilaHV-E8KTBaYbJxQmXBCmwCtbAOtgAm2ALbIMVIKkip5PJc45Aja0DBWigDqogD8qgAjj98wxZtdshYhmggn2QBQcgBw5BAchghyVSc_msNnYWgqfgBIjgGAhcnGtEQ8ekBIogDhKAThaVkVkDsqgpLJ-QEQtErWRE1uHnh1TSJNbuviRL2qj7j18UnKGTsSc2GqVqUZCU9JeqfzzGbh_zGbAHZsEcmAfnYAEsgiVwMdElpm_PzKfJRDzYBQ3Abu7sbFoJb6_Ml-9KboJlcA8ewcOUSr5vOdqm1otCWf6bO_v5f_-b7pdp9dg7-2JHTHYEAAA%3D
 
 # Using German Umlauts in ZMK on macOS
 
